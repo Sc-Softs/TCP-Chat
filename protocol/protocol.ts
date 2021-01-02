@@ -8,7 +8,7 @@ import {
   AsByte,
 } from "./defs/def";
 
-function makeLoginPack(Un: string): Pack {
+function makeLoginPack(Un: string,password?:Buffer): Pack {
   @AsPack()
   class LoginPack extends Pack {
     constructor() {
@@ -21,11 +21,16 @@ function makeLoginPack(Un: string): Pack {
     @AsString(Un)
     userName;
 
+    @AsBinary(password)
+    password;
+    
     @AsByte(0)
     footer;
   }
   return new LoginPack();
 }
-
-var f = makeLoginPack("1234");
+import {createHash} from "crypto";
+const md5 = createHash("md5");
+const passoword = md5.update("1234").digest();
+var f = makeLoginPack("1234",passoword);
 console.log(f.getBuffer());
