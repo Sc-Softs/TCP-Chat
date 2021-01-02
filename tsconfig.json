@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "ES6",
+        "sourceRoot": "./protocol/",
+        "sourceMap": false,
+        "inlineSourceMap": true,
+        "outDir": "./protocol/",
+        "module": "CommonJS",
+        "experimentalDecorators":true
+    },
+    "files": [
+        "./protocol/protocol.ts"
+    ]
+}
