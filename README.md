@@ -1,4 +1,4 @@
-# <p align="center">TCP Chat</p>
+# <p align="center">TCP 🗨Chat</p>
 
 ##### <p align="right">Powerd with Node.js</p>
 
